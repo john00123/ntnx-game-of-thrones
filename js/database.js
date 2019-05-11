@@ -44,23 +44,23 @@ function singlePage(text){
 
 
           if(responses[i] === 0){
-            $('p').eq(i).append(` you choose nothing`)
+            $('p').eq(i).append(` u chose nothing`)
           }
 
           if(responses[i] === 1){
-            $('p').eq(i).append(` you choose Alive`)
+            $('p').eq(i).append(` u chose Alive`)
             responses[i] === masterResponses[i] ?
             $('p').eq(i).addClass('correct') : $('p').eq(i).addClass('incorrect')
           }
 
           if(responses[i] === 2){
-            $('p').eq(i).append(` you choose Dead`)
+            $('p').eq(i).append(` u chose Dead`)
             responses[i] === masterResponses[i] ?
             $('p').eq(i).addClass('correct') : $('p').eq(i).addClass('incorrect')
           }
 
           if(responses[i] === 3){
-            $('p').eq(i).append(` you choose Wight Walker`)
+            $('p').eq(i).append(` u chose W-Walker`)
             responses[i] === masterResponses[i] ?
             $('p').eq(i).addClass('correct') : $('p').eq(i).addClass('incorrect')
           }
