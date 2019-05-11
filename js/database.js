@@ -74,7 +74,6 @@ function singlePage(text){
 }
 
 function leaderboard(){
-
   c.html('<h1>Leaderboard</h1><br>')
   usersSorted.get().then((query) => {
 
