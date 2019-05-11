@@ -40,6 +40,7 @@ function characterList(){
       } else{
         c.doc(name2).update({State:2})
         scoreUpdate()
+
       }
     })
 
@@ -47,13 +48,21 @@ function characterList(){
 }
 
 function scoreUpdate(){
-  usersSorted.get().then((query) => {
 
+  characters.get().then((query) => {
+    masterResponses = []
     query.forEach((doc) => {
+      let state = doc.data().State
+      masterResponses.push(state)
+    });
+  })
+
+  users.get().then((query) => {
+    query.forEach((doc) => {
+
       let score = 0
       let bet = doc.data().Money
       let name = doc.data().Name
-      let dbScore = doc.data().Score
       let response = doc.data().Responses
       let pregnant = doc.data().Pregnant
       let kills = doc.data().Kills
