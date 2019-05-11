@@ -12,7 +12,7 @@ function characterList(){
       let name = doc.data().Name
       if(state ===1){
         $('body').append(`<div vc class='character'>
-        <h1>${name[0]}</h1>
+        <h1>${name.match(/[A-Z]/g).join('')}</h1>
         <p>${name}</p></div>`)
       }
     })
