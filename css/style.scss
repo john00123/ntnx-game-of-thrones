@@ -72,8 +72,24 @@ section{
   @include flex(center, flex-start, row);
   a{
     margin-right: 20px;
+    color: $grey-2;
   }
+  .selected{color:$light-grey-2}
   z-index: 10;
+}
+
+.anim-start{
+  opacity: 0;
+  transform: translateX(-200px);
+}
+.anim-mid{
+  opacity: 0;
+  transform: translateX(200px);
+}
+
+.anim-end{
+  opacity: 1;
+  transform: translateX(0);
 }
 
 
@@ -81,6 +97,7 @@ section{
   width: 100%;
   flex-shrink: 0;
   overflow: hidden;
+  @include transition(transform);
 }
 
 *{

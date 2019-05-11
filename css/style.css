@@ -82,12 +82,33 @@ section {
 
 section a {
   margin-right: 20px;
+  color: #7C8D9F;
+}
+
+section .selected {
+  color: #D5DAE0;
+}
+
+.anim-start {
+  opacity: 0;
+  transform: translateX(-200px);
+}
+
+.anim-mid {
+  opacity: 0;
+  transform: translateX(200px);
+}
+
+.anim-end {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .container {
   width: 100%;
   flex-shrink: 0;
   overflow: hidden;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 * {

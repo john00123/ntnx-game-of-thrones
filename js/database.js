@@ -11,6 +11,7 @@ let c = $('.container')
 
 function characterList(){
   c.html('<h1>Game of Thrones Pool</h1><br>')
+
   characters.get().then((query) => {
 
     query.forEach((doc) => {
@@ -26,6 +27,7 @@ function characterList(){
     })
     //
   })
+  c.fadeIn('fast')
 }
 
 function singlePage(text){
@@ -64,19 +66,15 @@ function singlePage(text){
             responses[i] === masterResponses[i] ?
             $('p').eq(i).addClass('correct') : $('p').eq(i).addClass('incorrect')
           }
-
-
           }
         }
 
     })
   })
-
 }
 
 function leaderboard(){
-  $('a').eq(0).show();
-  $('a').eq(1).text('Leaderboard')
+
   c.html('<h1>Leaderboard</h1><br>')
   usersSorted.get().then((query) => {
 
@@ -119,13 +117,32 @@ function leaderboard(){
     })
 
   })
+
+  c.fadeIn('fast')
 }
 
 
 
+$('.characters').click(function(){
+  $('a').removeClass('selected')
+  $('.characters').addClass('selected')
+  c.fadeOut()
+  setTimeout(function () {
+    characterList()
+  }, 350);
+})
 
-$('.characters').click(characterList)
-$('.leader-board').click(leaderboard)
+$('.leader-board').click(function(){
+  $('a').removeClass('selected')
+  $('.leader-board').addClass('selected')
+  $('a').eq(0).show();
+  $('a').eq(1).text('Leaderboard')
+
+  c.fadeOut()
+  setTimeout(function () {
+    leaderboard()
+  }, 350);
+})
 
 
 
