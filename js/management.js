@@ -16,16 +16,15 @@ function characterList(){
       let name = doc.data().Name
 
 
-      $('body').append(`<div vc class='character'>
-        <h1>${name.match(/[A-Z]/g).join('')}</h1>
+      $('body').append(`<div class='character'>
 
+        <p>${name}</p>
         <label class="switch">
-          <input class='red-button' value='${name}'type="checkbox"
-          ${state === 1 ? 'checked': ''}>
+          <input class='red-button' value='${name}' type="checkbox"
+          ${state === 1 ? 'checked': ''}/>
           <span class="slider round"></span>
-        </label>
-
-        <p>${name}</p></div>`
+        </label></div>
+        `
       )
 
       masterResponses.push(state)

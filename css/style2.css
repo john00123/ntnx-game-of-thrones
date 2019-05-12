@@ -18,7 +18,6 @@ body {
   box-sizing: border-box;
   min-height: 100vh;
   margin: -1.5px;
-  padding: -1px;
   box-sizing: border-box;
 }
 
@@ -28,6 +27,8 @@ body {
   justify-content: center;
   flex-direction: column;
   border: 0.5px solid #22272E;
+  box-sizing: border-box;
+  padding: 30px;
 }
 
 h1 {
@@ -68,7 +69,7 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #888;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -109,6 +110,11 @@ input:checked + .slider:before {
 }
 
 @media only screen and (max-width: 800px) {
+  body {
+    grid-template-columns: 1fr 1fr;
+    margin-right: -1px;
+    transform: translateX(-0.5px);
+  }
   p {
     font-size: 12px;
   }
