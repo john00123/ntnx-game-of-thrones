@@ -78,33 +78,11 @@ function leaderboard(){
   usersSorted.get().then((query) => {
 
     query.forEach((doc) => {
-      let score = 0
+
       let bet = doc.data().Money
       let name = doc.data().Name
       let dbScore = doc.data().Score
-      let response = doc.data().Responses
-      let pregnant = doc.data().Pregnant
-      let kills = doc.data().Kills
-      let iron = doc.data().Iron
-
-      for (i=0; i< masterResponses.length; i++){
-
-        if(response[i] === masterResponses[i]){
-           response[i] === 3 ? score+= 2 : score+=1
-        }
-
-        if(response[i] !== masterResponses[i]){
-           response[i] === 3 ? score+=0 : score+= 0
-        }
-      }
-
-      //bonus
-      pregnant === null ? score+=1 : 0
-      kills === 3 ? score+=2 : 0
-      iron === null ? score +=4 : 0
-
-      users.doc(name).update({Score:score})
-
+      
 
       c.append(`<p class='link'><kbd>${name}</kbd> &nbsp; has <span>${dbScore} points</span>${bet === 1? ' and is betting' :''}</p>`)
 
