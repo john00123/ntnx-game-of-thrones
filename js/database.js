@@ -24,8 +24,15 @@ function characterList(){
       if(state === 3){ c.append(`<p class="ww">${name}  is a <span>Wight Walker</span></p>`)}
 
       masterResponses.push(state)
+
     })
     //
+
+    c.append('<br><br><br>')
+    c.append('<p> Daenerys was <span>not</span> pregnant</p>')
+    c.append('<p><span>Arya</span> killed the Knight King</p>')
+    c.append('<p><span>No one</span> sat in the Iron throne</p>')
+
   })
   c.fadeIn('fast')
 }
@@ -75,6 +82,7 @@ function singlePage(text){
 
 function leaderboard(){
   c.html('<h1>Leaderboard</h1><br>')
+
   usersSorted.get().then((query) => {
 
     query.forEach((doc) => {
@@ -82,7 +90,7 @@ function leaderboard(){
       let bet = doc.data().Money
       let name = doc.data().Name
       let dbScore = doc.data().Score
-      
+
 
       c.append(`<p class='link'><kbd>${name}</kbd> &nbsp; has <span>${dbScore} points</span>${bet === 1? ' and is betting' :''}</p>`)
 

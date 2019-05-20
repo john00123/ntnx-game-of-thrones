@@ -204,7 +204,7 @@ h4 {
 }
 
 .link:first-of-type ::after {
-  content: '👑';
+  content: 'Has won! Congratulations 👑';
   position: absolute;
   right: -1px;
   top: 14px;
