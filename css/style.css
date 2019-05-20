@@ -218,6 +218,10 @@ h4 {
   color: #e69a0a;
 }
 
+code {
+  color: #ffcd48;
+}
+
 @media only screen and (max-width: 800px) {
   section {
     height: 100px;
