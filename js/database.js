@@ -78,14 +78,14 @@ function singlePage(text){
           }
           }
 
-          if(pregnant === 0){ c.append(`<p class="correct">You chose Daenerys is not pregnant <code>&nbsp;+1 point</code></p>`)}
-          else{ c.append(`<p class="incorrect">You chose Daenerys is  pregnant</p>`)}
+          if(pregnant === 0){ c.append(`<p class="correct">Bonus - You chose Daenerys is not pregnant <code>&nbsp;+1 point</code></p>`)}
+          else{ c.append(`<p class="incorrect">Bonus - You chose Daenerys is  pregnant</p>`)}
 
-          if(kills === 3){ c.append(`<p class="correct">You chose Arya kills the Knight King <code>&nbsp;+2 points</code></p>`)}
-          else{ c.append(`<p class="incorrect">You did not choose Arya as the Knight King's executioner</p>`)}
+          if(kills === 3){ c.append(`<p class="correct">Bonus - You chose Arya kills the Knight King <code>&nbsp;+2 points</code></p>`)}
+          else{ c.append(`<p class="incorrect">Bonus - You did not choose Arya as the Knight King's executioner</p>`)}
 
-          if(iron === 0){ c.append(`<p class="correct">You chose no one sats in the Iron throne <code>&nbsp;+4 points</code></p>`)}
-          else{ c.append(`<p class="incorrect">You chose someone is sitting in the Iron Throne</p>`)}
+          if(iron === 0){ c.append(`<p class="correct">Bonus - You chose no one sats in the Iron throne <code>&nbsp;+4 points</code></p>`)}
+          else{ c.append(`<p class="incorrect">Bonus - You chose someone is sitting in the Iron Throne</p>`)}
         }
 
     })
