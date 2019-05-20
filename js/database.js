@@ -78,8 +78,8 @@ function singlePage(text){
           }
           }
 
-          if(pregnant === 0){ c.append(`<p class="correct">Bonus - You chose Daenerys is not pregnant <code>&nbsp;+1 point</code></p>`)}
-          else{ c.append(`<p class="incorrect">Bonus - You chose Daenerys is  pregnant</p>`)}
+          if(pregnant === 0){ c.append(`<br><br><p class="correct">Bonus - You chose Daenerys is not pregnant <code>&nbsp;+1 point</code></p>`)}
+          else{ c.append(`<br><br><p class="incorrect">Bonus - You chose Daenerys is  pregnant</p>`)}
 
           if(kills === 3){ c.append(`<p class="correct">Bonus - You chose Arya kills the Knight King <code>&nbsp;+2 points</code></p>`)}
           else{ c.append(`<p class="incorrect">Bonus - You did not choose Arya as the Knight King's executioner</p>`)}
@@ -118,6 +118,11 @@ function leaderboard(){
   c.fadeIn('fast')
 }
 
+function bonus() {
+  c.append('<p class="">Bonus - Daenerys was not pregnant</p>');
+  c.append('<p class="">Bonus - Arya kills the Knight King </p>');
+  c.append('<p class="">Bonus - The Iron throne no longer exists</p><br><br>');
+}
 
 
 $('.characters').click(function(){
@@ -126,6 +131,7 @@ $('.characters').click(function(){
   c.fadeOut()
   setTimeout(function () {
     characterList()
+    bonus()
   }, 350);
 })
 
@@ -138,6 +144,7 @@ $('.leader-board').click(function(){
   c.fadeOut()
   setTimeout(function () {
     leaderboard()
+
   }, 350);
 })
 
@@ -146,4 +153,7 @@ $('.leader-board').click(function(){
 
 
 
-$(document).ready(characterList)
+$(document).ready(function () {
+  characterList()
+  bonus()
+})
