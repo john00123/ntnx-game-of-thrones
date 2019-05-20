@@ -79,9 +79,9 @@ function scoreUpdate(){
       }
 
       //bonus
-      pregnant === null ? score +=1 : 0
-      kills    ===    3 ? score +=2 : 0
-      iron     === null ? score +=4 : 0
+      pregnant === 0 ? score +=1 : 0
+      kills    === 3 ? score +=2 : 0
+      iron     === 0 ? score +=4 : 0
 
       users.doc(name).update({Score:score})
     })
